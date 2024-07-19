@@ -22,7 +22,7 @@ Cache includes a sync.RWMutex for concurrent access and a map of key-value pairs
 
 ## Example Usage
 
-```
+```go
 package main
 
 import (
@@ -67,7 +67,7 @@ This example sets the key "key1" with a value of 123 and a time-to-live of 5 sec
 
 To run the tests, navigate to the `cacher` package directory and use the `make test` command.
 
-```
+```bash
 cd cacher
 make test
 ```
@@ -78,7 +78,7 @@ This will run the tests and output the results.
 
 To run the benchmark test, navigate to the `cacher` package directory and use the `make benchmark` command.
 
-```
+```bash
 cd cacher
 make benchmark
 ```
