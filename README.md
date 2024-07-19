@@ -2,6 +2,14 @@
 
 The Cacher package provides a simple, generic caching structure for Go. It includes a mutex for concurrent access and functions for setting, getting, checking for the existence of, and deleting cache entries.
 
+## Installation
+
+To install the `Cacher` package run the following command in the terminal
+
+```bash
+go get github.com/MukundSinghRajput/cacher
+```
+
 ## Cache Structure
 
 The `Cache` structure is a generic cache that takes two type parameters:
@@ -9,7 +17,7 @@ The `Cache` structure is a generic cache that takes two type parameters:
 - `C`: the type of the keys in the cache
 - `T`: the type of the values in the cache
 
-Cache includes a sync.RWMutex for concurrent access and a map of key-value pairs.
+Cache includes a `sync.RWMutex` for concurrent access and a map of key-value pairs.
 
 ## Functions
 
