@@ -30,7 +30,7 @@ func (c *Cache[C, T]) Set(key C, value T, ttl ...time.Duration) error {
 	// If ttl is greater than 0, start a goroutine to delete the key after ttl expires.
 	if len(ttl) > 0 && ttl[0] > 0 {
 		go func() {
-			time.Sleep(ttl[0])
+			<-time.After(ttl[0])
 			c.mu.Lock()
 			defer c.mu.Unlock()
 			delete(c.data, key)
@@ -73,6 +73,7 @@ func (c *Cache[C, T]) Delete(key C) error {
 	return nil
 }
 
+// GetAll returns all the data
 func (c *Cache[C, T]) GetAll() map[C]T {
 	c.mu.Lock()
 	defer c.mu.Unlock()

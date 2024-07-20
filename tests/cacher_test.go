@@ -3,6 +3,7 @@ package tests
 import (
 	"reflect"
 	"testing"
+	"time"
 
 	"github.com/MukundSinghRajput/cacher"
 )
@@ -10,12 +11,11 @@ import (
 func TestSet(t *testing.T) {
 	cache := cacher.NewCacher[string, string]()
 
-	cache.Set("pro", "mukund")
-
+	cache.Set("pro", "mukund", 5*time.Second)
 	g, _ := cache.Get("pro")
 
 	if !reflect.DeepEqual("mukund", g) {
-		t.Errorf("Get() wrong return value. excepter = %v, got %v", "mukund", g)
+		t.Errorf("Get() wrong return value. excepter = %v, got = %v", "mukund", g)
 	}
 }
 

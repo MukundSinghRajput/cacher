@@ -49,6 +49,12 @@ func main() {
   return
  }
 
+  e := c.Set("pro", "mukund") // No expiration
+ if e != nil {
+  fmt.Println(err)
+  return
+ }
+
  val, err := c.Get("key1")
  if err != nil {
   fmt.Println(err)
